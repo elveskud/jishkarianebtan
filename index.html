@@ -14,7 +14,7 @@
     --cream-2: #f3e9d6;
     --gold: #b88a3b;
     --gold-light: #d9b872;
-    --brown: #4a3222;
+    --brown: #5a4333;
     --brown-soft: #7a5c44;
     --wood: #8b5e3c;
     --white: #fffdf8;
@@ -101,13 +101,13 @@
   .note { text-align: center; margin-top: 28px; color: var(--brown-soft); font-size: .93rem; }
 
   /* contact */
-  #contact { background: var(--brown); color: var(--cream); }
-  #contact h2 { color: var(--gold-light); }
-  #contact .sub { color: #d8c7ae; }
+  #contact { background: var(--cream-2); color: var(--brown); }
+  #contact h2 { color: var(--brown); }
+  #contact .sub { color: var(--brown-soft); }
   .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-  .box { border: 1px solid var(--gold); border-radius: 14px; padding: 24px; text-align: center; }
+  .box { background: var(--white); border: 1px solid var(--gold-light); border-radius: 14px; padding: 24px; text-align: center; }
   .box .ico { font-size: 1.8rem; }
-  .box h3 { font-family: var(--serif); color: var(--gold-light); margin: 6px 0; }
+  .box h3 { font-family: var(--serif); color: var(--gold); margin: 6px 0; }
   .hours { list-style: none; }
   .hours li { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; border-bottom: 1px dotted rgba(217,184,114,.4); }
 
@@ -130,14 +130,25 @@
   .box-row b { color: var(--gold); }
   @media (max-width: 720px) { .two { grid-template-columns: 1fr; gap: 0; } .menu-board { padding: 22px 18px; } }
 
-  .maps a { display: block; margin-top: 8px; color: var(--gold-light); font-size: .92rem; }
+  .maps a { display: block; margin-top: 8px; color: var(--gold); font-size: .92rem; }
   .maps a:hover { text-decoration: underline; }
+
+  .top-phone { font-size: .9rem; text-decoration: none; color: var(--gold); font-weight: 500; white-space: nowrap; }
+  .slogan { font-family: var(--serif); font-size: 1.3rem; color: var(--gold); margin: 4px 0 14px; }
+  .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn.alt { background: transparent; color: var(--gold); }
+  .btn.alt:hover { background: var(--gold); color: var(--white); }
+  .season { font-style: normal; font-family: var(--sans); font-size: .72rem; color: var(--gold); margin-left: 6px; }
+  .to-top { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px; border-radius: 50%; background: var(--gold); color: var(--white); text-decoration: none; display: grid; place-items: center; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(74,50,34,.25); }
+  footer p + p { margin-top: 4px; }
 
   footer { text-align: center; padding: 22px; font-size: .88rem; color: var(--brown-soft); background: var(--cream-2); }
 
   @media (max-width: 720px) {
     .about { grid-template-columns: 1fr; }
-    nav ul { gap: 14px; }
+    nav ul { gap: 12px; }
+    nav ul a { font-size: .85rem; }
+    .logo { font-size: 1rem; }
     section { padding: 50px 0; }
   }
 </style>
@@ -152,6 +163,7 @@
       <li><a href="#menu">მენიუ</a></li>
       <li><a href="#contact">კონტაქტი</a></li>
     </ul>
+    <a class="top-phone" href="tel:+995591155173">📞 591 15 51 73</a>
   </nav>
 </header>
 
@@ -160,8 +172,9 @@
     <div class="emoji">🎂</div>
     <div class="divider">✦ ✦ ✦</div>
     <h1>ჯიშკარიანებთან</h1>
+    <div class="slogan">ყავის ტორტი 1996 წლიდან</div>
     <p>სახლში გამომცხვარი ტორტები და ტკბილეული — ხელით, სიყვარულითა და ბებიების რეცეპტებით.</p>
-    <a class="btn" href="#menu">მენიუს ნახვა</a>
+    <div class="btns"><a class="btn" href="#menu">მენიუს ნახვა</a><a class="btn alt" href="tel:+995591155173">დაგვირეკეთ</a></div>
   </div>
 
   <section id="about">
@@ -189,7 +202,7 @@
 <li><span>ქის იუ</span><b>60 ₾</b><b>15 ₾</b></li>
 <li><span>ლიმონის ნამცხვარი</span><b>60 ₾</b><b>15 ₾</b></li>
 <li><span>კოკონატო</span><b>60 ₾</b><b>15 ₾</b></li>
-<li><span>ხილის ნამცვარი</span><b>60 ₾</b><b>7.5 ₾</b></li>
+<li><span>ხილის ნამცხვარი<em class="season">სეზონური ხილით</em></span><b>60 ₾</b><b>7.5 ₾</b></li>
 <li><span>მადამ ფუფუ</span><b>60 ₾</b><b>7.5 ₾</b></li>
 <li><span>დოლარი</span><b>60 ₾</b><b>7.5 ₾</b></li>
 <li><span>იდეალი</span><b>56 ₾</b><b>7 ₾</b></li>
@@ -223,7 +236,9 @@
         </div>
         <div class="box-row"><strong>ყუთი</strong><span>პატარა <b>1.5 ₾</b></span><span>საშუალო <b>2 ₾</b></span><span>დიდი <b>2.5 ₾</b></span></div>
       </div>
-      <p class="note">პატარა შეკვეთა გთხოვთ ერთი დღით ადრე, დიდი შეკვეთა — 2-3 დღით ადრე.</p>
+      <p class="note">ხილის ტორტი და ხილის ნამცხვარი მზადდება სეზონური ხილით.</p>
+      <p class="note">შეკვეთა შეგიძლიათ ტელეფონით ან უშუალოდ მაღაზიაში. პატარა შეკვეთა გთხოვთ ერთი დღით ადრე, დიდი შეკვეთა — 2-3 დღით ადრე.</p>
+      <p class="note">ალერგენები: პროდუქტი შეიძლება შეიცავდეს თხილეულს, რძეს, კვერცხს და გლუტენს (ფქვილს).</p>
       <p class="note">არსებულ ტორტებზე შეგვიძლია წარწერის გაკეთება. გაცემა მხოლოდ ადგილზეა, მიტანის სერვისი არ გვაქვს.</p>
     </div>
   </section>
@@ -242,7 +257,11 @@
   </section>
 </main>
 
-<footer>© <span id="y"></span> ჯიშკარიანებთან · გაკეთებულია სიყვარულით 🤍</footer>
+<footer>
+  <p>ქ. რუსთავი, ფიროსმანის 5 · მესხიშვილის 16 · <a href="tel:+9953412255173">0341 25 51 73</a> · <a href="tel:+995591155173">591 15 51 73</a></p>
+  <p>© <span id="y"></span> ჯიშკარიანებთან · გაკეთებულია სიყვარულით 🤍</p>
+</footer>
+<a class="to-top" href="#top" aria-label="ზემოთ">↑</a>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
