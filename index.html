@@ -111,6 +111,24 @@
   .hours { list-style: none; }
   .hours li { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; border-bottom: 1px dotted rgba(217,184,114,.4); }
 
+
+  /* menu board */
+  .menu-board { background: var(--white); border: 3px double var(--gold); border-radius: 6px; padding: 30px 34px; box-shadow: 0 6px 20px rgba(74,50,34,.1); }
+  .menu-board h3 { font-family: var(--serif); font-size: 1.25rem; border-bottom: 1px solid var(--gold-light); padding-bottom: 6px; margin: 22px 0 8px; }
+  .menu-board > h3:first-child { margin-top: 0; }
+  .list { list-style: none; }
+  .list li { display: flex; align-items: baseline; gap: 10px; padding: 4px 0; }
+  .list li span { flex: 1; display: flex; align-items: baseline; }
+  .list li span::after { content: ""; flex: 1; border-bottom: 1px dotted var(--gold-light); margin: 0 8px; }
+  .list b { color: var(--gold); min-width: 3.4em; text-align: right; }
+  .pastry li.head { font-size: .72rem; letter-spacing: .12em; color: var(--brown-soft); }
+  .pastry li.head i { font-style: normal; min-width: 3.4em; text-align: right; }
+  .pastry li.head span::after { border: 0; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .box-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 20px; margin-top: 26px; padding: 10px 0; border-top: 1px solid var(--gold-light); border-bottom: 1px solid var(--gold-light); }
+  .box-row b { color: var(--gold); }
+  @media (max-width: 720px) { .two { grid-template-columns: 1fr; gap: 0; } .menu-board { padding: 22px 18px; } }
+
   footer { text-align: center; padding: 22px; font-size: .88rem; color: var(--brown-soft); background: var(--cream-2); }
 
   @media (max-width: 720px) {
@@ -127,7 +145,7 @@
     <a class="logo" href="#top">ჯიშკარიანებთან</a>
     <ul>
       <li><a href="#about">ჩვენ შესახებ</a></li>
-      <li><a href="#menu">ტორტები</a></li>
+      <li><a href="#menu">მენიუ</a></li>
       <li><a href="#contact">კონტაქტი</a></li>
     </ul>
   </nav>
@@ -139,7 +157,7 @@
     <div class="divider">✦ ✦ ✦</div>
     <h1>ჯიშკარიანებთან</h1>
     <p>სახლში გამომცხვარი ტორტები და ტკბილეული — ხელით, სიყვარულითა და ბებიების რეცეპტებით.</p>
-    <a class="btn" href="#menu">ტორტების ნახვა</a>
+    <a class="btn" href="#menu">მენიუს ნახვა</a>
   </div>
 
   <section id="about">
@@ -155,35 +173,63 @@
 
   <section id="menu">
     <div class="wrap">
-      <h2>ჩვენი ტორტები</h2>
+      <h2>მენიუ</h2>
       <p class="sub">ყოველდღიურად ახლად მომზადებული</p>
-      <div class="grid">
-        <article class="card"><div class="pic">🍫</div><div class="body"><h3>შოკოლადის ტორტი</h3><p>რბილი ბისკვიტი და მდიდარი შოკოლადის კრემი.</p><div class="price">₾ 00 / კგ</div></div></article>
-        <article class="card"><div class="pic">🍯</div><div class="body"><h3>თაფლის ტორტი</h3><p>კლასიკური მედოვიკი ნაზი ნაღების კრემით.</p><div class="price">₾ 00 / კგ</div></div></article>
-        <article class="card"><div class="pic">🍓</div><div class="body"><h3>მარწყვის ტორტი</h3><p>მსუბუქი ბისკვიტი, ნაღები და ახალი მარწყვი.</p><div class="price">₾ 00 / კგ</div></div></article>
-        <article class="card"><div class="pic">🌰</div><div class="body"><h3>ნიგვზის ტორტი</h3><p>ტრადიციული გემო ქართული ნიგვზით.</p><div class="price">₾ 00 / კგ</div></div></article>
-        <article class="card"><div class="pic">🍪</div><div class="body"><h3>ნამცხვრები</h3><p>ხრაშუნა სახლის ნამცხვრები ჩაისთვის.</p><div class="price">₾ 00 / კგ</div></div></article>
-        <article class="card"><div class="pic">🎉</div><div class="body"><h3>შეკვეთით გაკეთებული</h3><p>საიუბილეო და საქორწილო ტორტები თქვენი იდეით.</p><div class="price">ფასი შეთანხმებით</div></div></article>
+      <div class="menu-board">
+        <h3>ნამცხვრები</h3>
+        <ul class="list pastry">
+          <li class="head"><span></span><i>მთლიანი</i><i>ნაჭერი</i></li>
+<li><span>საკურა</span><b>64 ₾</b><b>16 ₾</b></li>
+<li><span>XO</span><b>64 ₾</b><b>8 ₾</b></li>
+<li><span>ჩიტის რძე</span><b>64 ₾</b><b>8 ₾</b></li>
+<li><span>ქის იუ</span><b>60 ₾</b><b>15 ₾</b></li>
+<li><span>ლიმონის ნამცხვარი</span><b>60 ₾</b><b>15 ₾</b></li>
+<li><span>კოკონატო</span><b>60 ₾</b><b>15 ₾</b></li>
+<li><span>ხილის ნამცვარი</span><b>60 ₾</b><b>7.5 ₾</b></li>
+<li><span>მადამ ფუფუ</span><b>60 ₾</b><b>7.5 ₾</b></li>
+<li><span>დოლარი</span><b>60 ₾</b><b>7.5 ₾</b></li>
+<li><span>იდეალი</span><b>56 ₾</b><b>7 ₾</b></li>
+<li><span>პოლრობსონი</span><b>56 ₾</b><b>7 ₾</b></li>
+<li><span>შოკოლადის სუფლე</span><b>56 ₾</b><b>7 ₾</b></li>
+<li><span>ხილის სუფლე</span><b>56 ₾</b><b>7 ₾</b></li>
+        </ul>
+        <div class="two">
+          <div>
+            <h3>ტორტები</h3>
+            <ul class="list">
+<li><span>35 ნაჭრიანი</span><b>150 ₾</b></li>
+<li><span>25 ნაჭრიანი</span><b>85 ₾</b></li>
+<li><span>15 ნაჭრიანი</span><b>60 ₾</b></li>
+<li><span>10 ნაჭრიანი</span><b>40 ₾</b></li>
+<li><span>მინიტორტი</span><b>5 ₾</b></li>
+            </ul>
+          </div>
+          <div>
+            <h3>საცალოები</h3>
+            <ul class="list">
+<li><span>ნუში</span><b>10 ₾</b></li>
+<li><span>ქადა</span><b>10 ₾</b></li>
+<li><span>მაფინი</span><b>4 ₾</b></li>
+<li><span>ტარტალეტკა</span><b>3 ₾</b></li>
+<li><span>ეკლერი</span><b>2.5 ₾</b></li>
+<li><span>შოკოლადის ორცხობილა</span><b>2 ₾</b></li>
+<li><span>ჰავანა</span><b>1.5 ₾</b></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box-row"><strong>ყუთი</strong><span>პატარა <b>1.5 ₾</b></span><span>საშუალო <b>2 ₾</b></span><span>დიდი <b>2.5 ₾</b></span></div>
       </div>
-      <p class="note">შეკვეთა გთხოვთ წინასწარ, სასურველია მინიმუმ 2 დღით ადრე.</p>
+      <p class="note">ტორტების შეკვეთა გთხოვთ წინასწარ, სასურველია მინიმუმ 2 დღით ადრე.</p>
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
       <h2>კონტაქტი</h2>
-      <p class="sub">დაგვირეკეთ ან მოგვწერეთ — სიამოვნებით გიპასუხებთ</p>
+      <p class="sub">დაგვირეკეთ — სიამოვნებით გიპასუხებთ</p>
       <div class="contact">
-        <div class="box"><div class="ico">📍</div><h3>მისამართი</h3><p>ქალაქი, ქუჩა, ნომერი</p></div>
-        <div class="box"><div class="ico">📞</div><h3>ტელეფონი</h3><p><a href="tel:+995000000000">+995 000 00 00 00</a></p></div>
-        <div class="box">
-          <div class="ico">🕘</div><h3>სამუშაო საათები</h3>
-          <ul class="hours">
-            <li><span>ორშ – პარ</span><span>10:00 – 19:00</span></li>
-            <li><span>შაბათი</span><span>10:00 – 17:00</span></li>
-            <li><span>კვირა</span><span>დასვენება</span></li>
-          </ul>
-        </div>
+        <div class="box"><div class="ico">📍</div><h3>მისამართი</h3><p>ქ. რუსთავი,<br>ფიროსმანის 5<br>მესხიშვილის 16</p></div>
+        <div class="box"><div class="ico">📞</div><h3>ტელეფონი</h3><p><a href="tel:+9953412255173">0341 25 51 73</a><br><a href="tel:+995591155173">591 15 51 73</a></p></div>
       </div>
     </div>
   </section>
