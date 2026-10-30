@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ჯიშკარიანებთან — სახლის ტორტები</title>
+<meta name="description" content="ჯიშკარიანებთან — ხელით გაკეთებული ტორტები და ტკბილეული სიყვარულით.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;600;700&family=Noto+Sans+Georgian:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fbf6ec;
+    --cream-2: #f3e9d6;
+    --gold: #b88a3b;
+    --gold-light: #d9b872;
+    --brown: #4a3222;
+    --brown-soft: #7a5c44;
+    --wood: #8b5e3c;
+    --white: #fffdf8;
+    --serif: "Noto Serif Georgian", Georgia, serif;
+    --sans: "Noto Sans Georgian", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--brown);
+    line-height: 1.65;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+
+  /* nav */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(251,246,236,.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--gold-light);
+  }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; max-width: 1060px; margin: 0 auto; }
+  .logo { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; color: var(--gold); text-decoration: none; }
+  nav ul { display: flex; gap: 22px; list-style: none; }
+  nav ul a { text-decoration: none; font-size: .95rem; color: var(--brown-soft); }
+  nav ul a:hover { color: var(--gold); }
+
+  /* hero */
+  .hero {
+    text-align: center;
+    padding: 90px 20px 100px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(217,184,114,.28), transparent 60%),
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(139,94,60,.04) 38px 40px),
+      var(--cream);
+    border-bottom: 6px double var(--gold-light);
+  }
+  .hero .emoji { font-size: 3.4rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 7vw, 3.8rem); color: var(--brown); margin: 8px 0; line-height: 1.2; }
+  .hero p { max-width: 560px; margin: 0 auto 28px; color: var(--brown-soft); font-size: 1.1rem; }
+  .divider { color: var(--gold); letter-spacing: .6em; margin-bottom: 14px; }
+  .btn {
+    display: inline-block; padding: 12px 30px;
+    background: var(--gold); color: var(--white);
+    border-radius: 999px; text-decoration: none; font-weight: 500;
+    border: 2px solid var(--gold);
+    transition: .2s;
+  }
+  .btn:hover { background: transparent; color: var(--gold); }
+
+  section { padding: 70px 0; }
+  h2 { font-family: var(--serif); font-size: 2rem; text-align: center; margin-bottom: 10px; }
+  .sub { text-align: center; color: var(--brown-soft); margin-bottom: 40px; }
+  h2::after { content: ""; display: block; width: 70px; height: 3px; background: var(--gold-light); margin: 12px auto 0; border-radius: 2px; }
+
+  /* about */
+  #about { background: var(--cream-2); }
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .about-photo {
+    aspect-ratio: 4/3; border-radius: 14px;
+    background: linear-gradient(135deg, var(--gold-light), var(--wood));
+    display: grid; place-items: center; font-size: 5rem;
+    border: 6px solid var(--white); box-shadow: 0 8px 24px rgba(74,50,34,.18);
+  }
+  .about p + p { margin-top: 14px; }
+
+  /* menu */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+  .card {
+    background: var(--white); border: 1px solid var(--gold-light);
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 4px 14px rgba(74,50,34,.08);
+    transition: transform .2s;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .card .pic { height: 150px; display: grid; place-items: center; font-size: 4rem; background: linear-gradient(135deg, #f7e9cc, #ecd3a3); }
+  .card .body { padding: 18px; }
+  .card h3 { font-family: var(--serif); font-size: 1.15rem; margin-bottom: 4px; }
+  .card p { color: var(--brown-soft); font-size: .93rem; }
+  .price { margin-top: 10px; color: var(--gold); font-weight: 600; }
+  .note { text-align: center; margin-top: 28px; color: var(--brown-soft); font-size: .93rem; }
+
+  /* contact */
+  #contact { background: var(--brown); color: var(--cream); }
+  #contact h2 { color: var(--gold-light); }
+  #contact .sub { color: #d8c7ae; }
+  .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .box { border: 1px solid var(--gold); border-radius: 14px; padding: 24px; text-align: center; }
+  .box .ico { font-size: 1.8rem; }
+  .box h3 { font-family: var(--serif); color: var(--gold-light); margin: 6px 0; }
+  .hours { list-style: none; }
+  .hours li { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; border-bottom: 1px dotted rgba(217,184,114,.4); }
+
+  footer { text-align: center; padding: 22px; font-size: .88rem; color: var(--brown-soft); background: var(--cream-2); }
+
+  @media (max-width: 720px) {
+    .about { grid-template-columns: 1fr; }
+    nav ul { gap: 14px; }
+    section { padding: 50px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="#top">ჯიშკარიანებთან</a>
+    <ul>
+      <li><a href="#about">ჩვენ შესახებ</a></li>
+      <li><a href="#menu">ტორტები</a></li>
+      <li><a href="#contact">კონტაქტი</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="emoji">🎂</div>
+    <div class="divider">✦ ✦ ✦</div>
+    <h1>ჯიშკარიანებთან</h1>
+    <p>სახლში გამომცხვარი ტორტები და ტკბილეული — ხელით, სიყვარულითა და ბებიების რეცეპტებით.</p>
+    <a class="btn" href="#menu">ტორტების ნახვა</a>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-photo" aria-hidden="true">🍰</div>
+      <div>
+        <h2 style="text-align:left">ჩვენ შესახებ</h2>
+        <p>ჯიშკარიანებთან სახლის სითბოთი სავსე პატარა საკონდიტროა. ყველა ტორტი მზადდება ხელით, ბუნებრივი ინგრედიენტებით და ყოველი შეკვეთა ისე იგზავნება, თითქოს საკუთარი ოჯახისთვის ვაცხობდეთ.</p>
+        <p>დაბადების დღე, ქორწილი თუ უბრალოდ კარგი საღამო — ჩვენთან ყოველ დღესასწაულს თავისი გემო აქვს.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>ჩვენი ტორტები</h2>
+      <p class="sub">ყოველდღიურად ახლად მომზადებული</p>
+      <div class="grid">
+        <article class="card"><div class="pic">🍫</div><div class="body"><h3>შოკოლადის ტორტი</h3><p>რბილი ბისკვიტი და მდიდარი შოკოლადის კრემი.</p><div class="price">₾ 00 / კგ</div></div></article>
+        <article class="card"><div class="pic">🍯</div><div class="body"><h3>თაფლის ტორტი</h3><p>კლასიკური მედოვიკი ნაზი ნაღების კრემით.</p><div class="price">₾ 00 / კგ</div></div></article>
+        <article class="card"><div class="pic">🍓</div><div class="body"><h3>მარწყვის ტორტი</h3><p>მსუბუქი ბისკვიტი, ნაღები და ახალი მარწყვი.</p><div class="price">₾ 00 / კგ</div></div></article>
+        <article class="card"><div class="pic">🌰</div><div class="body"><h3>ნიგვზის ტორტი</h3><p>ტრადიციული გემო ქართული ნიგვზით.</p><div class="price">₾ 00 / კგ</div></div></article>
+        <article class="card"><div class="pic">🍪</div><div class="body"><h3>ნამცხვრები</h3><p>ხრაშუნა სახლის ნამცხვრები ჩაისთვის.</p><div class="price">₾ 00 / კგ</div></div></article>
+        <article class="card"><div class="pic">🎉</div><div class="body"><h3>შეკვეთით გაკეთებული</h3><p>საიუბილეო და საქორწილო ტორტები თქვენი იდეით.</p><div class="price">ფასი შეთანხმებით</div></div></article>
+      </div>
+      <p class="note">შეკვეთა გთხოვთ წინასწარ, სასურველია მინიმუმ 2 დღით ადრე.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>კონტაქტი</h2>
+      <p class="sub">დაგვირეკეთ ან მოგვწერეთ — სიამოვნებით გიპასუხებთ</p>
+      <div class="contact">
+        <div class="box"><div class="ico">📍</div><h3>მისამართი</h3><p>ქალაქი, ქუჩა, ნომერი</p></div>
+        <div class="box"><div class="ico">📞</div><h3>ტელეფონი</h3><p><a href="tel:+995000000000">+995 000 00 00 00</a></p></div>
+        <div class="box">
+          <div class="ico">🕘</div><h3>სამუშაო საათები</h3>
+          <ul class="hours">
+            <li><span>ორშ – პარ</span><span>10:00 – 19:00</span></li>
+            <li><span>შაბათი</span><span>10:00 – 17:00</span></li>
+            <li><span>კვირა</span><span>დასვენება</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="y"></span> ჯიშკარიანებთან · გაკეთებულია სიყვარულით 🤍</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
